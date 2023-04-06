@@ -1,0 +1,55 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    <!-- Bootstrap CSS -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.0/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-KyZXEAg3QhqLMpG8r+8fhAXLRk2vvoC2f3B09zVXn8CA5QIVfZOJ3BCsw2P0p/We" crossorigin="anonymous">
+    <link href="https://unpkg.com/tailwindcss@^2/dist/tailwind.min.css" rel="stylesheet">
+
+    <title>SmartNews</title>
+  </head>
+  <body class="bg-gray-200">
+    <header class="text-gray-600 body-font -my-8">
+        <div class="container mx-auto flex flex-wrap p-5 flex-col md:flex-row items-center">
+          <a class="flex title-font font-medium items-center text-gray-900 mb-4 md:mb-0">
+            <span class="ml-3 text-4xl font-bold italic">SmartNews</span>
+          </a>
+          <nav class="md:ml-auto flex flex-wrap items-center text-base justify-center">
+            <a href="/" class="text-2xl mr-5 hover:text-gray-900">Home</a>
+            <a href="/newsfeed" class="text-2xl mr-5 hover:text-gray-900">News</a>
+            <a href="/prediction" class="text-2xl mr-5 hover:text-gray-900">Prediction</a>
+            <a class="text-2xl mr-5 hover:text-gray-900">Contact us</a>
+          </nav>
+        </div>
+      </header><hr>
+      
+      <!-- hero section -->
+      <section class="text-gray-600 body-font -my-8">
+        <div class="container px-5 py-24 mx-auto">
+          <div class="flex flex-col text-center w-full mb-20">
+            
+            <h1 class="sm:text-3xl text-3xl font-medium title-font mb-4 text-red-900">OUR BATTLE AGAINST FAKE NEWS</h1>
+            <p class="lg:w-3/4 mx-auto leading-relaxed text-base">The aim of the fake news project is to help news readers to identify bias and misinformation in news articles in a quick and reliable fashion. We have collected news articles with labels and used them to train text classification systems to detect fake from real news. You can paste a piece of text and examine its similarity to our collection of true vs. false news articles. Enjoy testing!</p>
+            <br><p class="text-primary text-3xl"><b>{{prediction_text}}</b></p>
+          </div>
+          <div class="center">
+            <form action="/prediction" method="POST">
+                <div class="mb-3">
+                  <label for="exampleInputEmail1" class="form-label">Please enter your text:</label>
+                  <input type="text" class="form-control" id="news" name="news" aria-describedby="emailHelp">
+                  
+                </div>
+              
+                <button type="submit" class="btn btn-primary">Submit</button>
+              </form>
+          </div>
+        </div>
+        
+      </section>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.0/dist/js/bootstrap.bundle.min.js" integrity="sha384-U1DAWAznBHeqEIlVSCgzq+c9gqGAJn5c/t99JyeKa9xxaYpSvHU5awsuZVVFIhvj" crossorigin="anonymous"></script>
+  </body>
+</html>
